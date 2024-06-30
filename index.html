@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Comming soon">
+  <meta name="keywords" content="Comming soon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multimodal Language Models are Visual Imitation Learner for Fine-grained Actions</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Multimodal Language Models are Visual Imitation Learner for Fine-grained Actions </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>anonymous</a><sup>1</sup>,</span>
+            <!-- <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>anonymous</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links"> 
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-freecompress-chemistry_experiments">
+          <video poster="" id="freecompress-chemistry_experiments" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/freecompress-chemistry_experiments.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-clean_table_video">
+          <video poster="" id="clean_table_video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/clean_table_video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-make_a_pie_video">
+          <video poster="" id="make_a_pie_video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/make_a_pie_video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-freecompress-make_coffee_video">
+          <video poster="" id="freecompress-make_coffee_video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/freecompress-make_coffee_video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-make_slices_video">
+          <video poster="" id="make_slices_video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/make_slices_video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-wash_pan_video">
+          <video poster="" id="wash_pan_video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/long_task/wash_pan_video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <!-- <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Abstract</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+        </div>
+      </div> -->
+
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <div class="column" style="display: flex; align-items: center; justify-content: center;">
+          <div class="content">
+              <h2 class="title is-3" style="font-size: 30px; text-align: center; font-weight: bold;">Abstract</h2>
+              <p style="text-align: justify;font-size: 22px; font-family: 'Verdana', sans-serif;">
+                  Visual imitation learning (VIL) provides an efficient and intuitive strategy for robotic systems to acquire novel skills. Recent advancements in Vision Language Models (VLMs) have demonstrated remarkable performance in vision and language reasoning capabilities for VIL tasks. Despite the progress, current VIL methods naively employ VLMs to learn high-level plans from human videos, relying on pre-defined motion primitives for executing physical interactions, which remains a major bottleneck. In this work, we present VLMimic, a novel paradigm that harnesses VLMs to directly learn even fine-grained action levels, only given a limited number of human videos. Specifically, VLMimic first grounds object-centric movements from human videos, and learns skills using hierarchical constraint representations, facilitating the derivation of skills with fine-grained action levels from limited human videos. These skills are refined and updated through an iterative comparison strategy, enabling efficient adaptation to unseen environments. Our extensive experiments exhibit that our VLMimic, using only 5 human videos, yields significant improvements of over 27% and 21% in RLBench and real-world manipulation tasks, and surpasses baselines by more than 37% in long-horizon tasks. 
+                  <!-- Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+                  would be impossible without nerfies since it would require going through a wall. -->
+              </p>
+          </div>
+        </div>
+        <!-- <h2 class="title is-3">Matting</h2> -->
+        <!-- <div class="columns is-centered">
+          <!-- <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div> -->
+
+        <!-- </div> --> 
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <div class="video-small-grid">
+      <video autoplay controls muted loop playsinline src="./static/videos/20240612_170803.mp4"></video>
+      <!-- <video controls src="./static/videos/2_stack_block4X.mp4"></video>
+      <video controls src="./static/videos/3_open_oven4X.mp4"></video>
+      <video controls src="./static/videos/4_pick_mango_plate4X.mp4"></video>
+      <video controls src="./static/videos/5_press_button4X.mp4"></video>
+      <video controls src="./static/videos/6_open_microwave_oven4X.mp4"></video> -->
+    </div>
+    
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3> -->
+        <!-- <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div> -->
+        <div class="columns is-vcentered interpolation-panel">
+          <!-- <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div> -->
+          <!-- <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div> -->
+          <!-- <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div> -->
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div> -->
+        <!-- <div class="video-container"> -->
+          <!-- <div class="video">
+            <video id="1_open_drawer4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/1_open_drawer4X.mp4" type="video/mp4">
+            </video>
+          </div> -->
+          <!-- <div class="video">
+            <video id="2_stack_block4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/202_stack_block4X.mp4" type="video/mp4">
+            </video>
+          </div> -->
+          <!-- 添加更多视频时，复制上面的<div class="video">...</div>块 -->
+        <!-- </div> -->
+        <h2 class="title is-3" style="font-size: 30px; text-align: center; font-weight: bold;">Subtasks</h2>
+        <div class="video-grid">
+          <div class="video">
+            <video id="1_open_drawer4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/1_open_drawer4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">open drawer</p>
+          </div>
+          <div class="video">
+            <video id="2_stack_block4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/2_stack_block4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">stack block</p>
+          </div>
+          <div class="video">
+            <video id="3_open_oven4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/3_open_oven4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">open oven</p>
+          </div>
+          <div class="video">
+            <video id="4_pick_mango_plate4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/4_pick_mango_plate4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">pick mango to plate</p>
+          </div>
+          <div class="video">
+            <video id="5_press_button4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/5_press_button4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">press button</p>
+          </div>
+          <div class="video">
+            <video id="6_open_microwave_oven4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/6_open_microwave_oven4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">open microwave</p>
+          </div>
+          <div class="video">
+            <video id="7_put_tray_in_oven4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/7_put_tray_in_oven4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">put tray in oven</p>
+          </div>
+          <div class="video">
+            <video id="8_turn_on_oven4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/8_turn_on_oven4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">turn on oven</p>
+          </div>
+          <div class="video">
+            <video id="9_sweep_table4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/9_sweep_table4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">sweep table</p>
+          </div>
+          <div class="video">
+            <video id="10_insert_box4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/10_insert_box4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">insert box</p>
+          </div>
+          <div class="video">
+            <video id="11_brush_pan4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/11_brush_pan4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">brush pan</p>
+          </div>
+          <div class="video">
+            <video id="12_spread_sauce4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/12_spread_sauce4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">spread sauce</p>
+          </div>
+          <div class="video">
+            <video id="13_pick_toy_drawer4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/13_pick_toy_drawer4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">pick toy to drawer</p>
+          </div>
+          <div class="video">
+            <video id="14_pour_cup4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/14_pour_cup4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">pour from cup to cup</p>
+          </div>
+          <div class="video">
+            <video id="clean_pan4X" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/clean_pan4X.mp4" type="video/mp4">
+            </video>
+            <p class="video-description">clean pan</p>
+          </div>
+          <!-- 更多视频 -->
+        </div>
+
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+    
+    <div>
+      <div class="column is-full-width">
+        <div class="columns is-vcentered interpolation-panel">
+        </div>
+        <h2 class="title is-3" style="font-size: 30px; text-align: center; font-weight: bold;">Long tasks</h2>
+        <div class="video-long-grid">
+          <div class="video-long video-long-freecompress-chemistry_experiments">
+            <video poster="" id="freecompress-chemistry_experiments" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/freecompress-chemistry_experiments.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">chemistry experiments</p>
+          </div>
+          <div class="video-long video-long-clean_table_video">
+            <video poster="" id="clean_table_video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/clean_table_video.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">clean table</p>
+          </div>
+          <div class="video-long video-long-make_a_pie_video">
+            <video poster="" id="make_a_pie_video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/make_a_pie_video.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">make a pie</p>
+          </div>
+          <div class="video-long video-long-freecompress-make_coffee_video">
+            <video poster="" id="freecompress-make_coffee_video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/freecompress-make_coffee_video.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">make coffee</p>
+          </div>
+          <div class="video-long video-long-make_slices_video">
+            <video poster="" id="make_slices_video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/make_slices_video.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">make slices</p>
+          </div>
+          <div class="video-long video-long-wash_pan_video">
+            <video poster="" id="wash_pan_video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_task/wash_pan_video.mp4"
+                      type="video/mp4">
+            </video>
+            <p class="long-video-description">wash pan</p>
+          </div>
+          <!-- 更多视频 -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+</html>
